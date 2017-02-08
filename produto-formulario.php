@@ -12,9 +12,11 @@
 			
 			<?php 
 				$categorias = listarCategorias($conexao);
-				foreach ($categorias as $categoria) {
-					echo $categoria['nome'].'<br>';
-				}
+				foreach ($categorias as $categoria):  ?>
+					<input type="radio" name="categoria_id" value="<?=$categoria['id']?>"> <?=$categoria['name']?>
+				
+				<?php
+				endforeach;
 
 			?>
 

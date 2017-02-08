@@ -12,8 +12,8 @@
 
 	}
 
-	function adicionaproduto($nome,$preco,$descricao,$conexao){
-		$query = "insert into produtos (nome,preco,descricao) values ('{$nome}',{$preco},'{$descricao}')";
+	function adicionaproduto($nome,$preco,$descricao,$categoria_id,$conexao){
+		$query = "insert into produtos (nome,preco,descricao,categoria_id) values ('{$nome}',{$preco},'{$descricao}',{$categoria_id})";
 		return mysqli_query($conexao, $query);
 	}
 
