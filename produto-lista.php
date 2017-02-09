@@ -17,6 +17,7 @@
      <td> <p class="">Preço</p> </td> 
      <td> <p class="">Descricao</p> </td> 
      <td> <p class="">Categoria</p> </td>
+     <td> <p class="">Excluir</p> </td>
 </tr> 
 
 
@@ -28,6 +29,7 @@ foreach ($produtos as $produto) {
      <td> <?=$produto['nome']?> </td> 
      <td> <?=$produto['preco']?> </td>
      <td> <?=substr($produto['descricao'], 0,15)?> </td>
+      <td> <?=$produto['categoria_nome']?> </td>  
      <td> 
 
 

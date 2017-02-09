@@ -13,7 +13,7 @@
 			<?php 
 				$categorias = listarCategorias($conexao);
 				foreach ($categorias as $categoria):  ?>
-					<input type="radio" name="categoria_id" value="<?=$categoria['id']?>"> <?=$categoria['name']?>
+					<input type="radio" name="categoria_id" value="<?=$categoria['id']?>"> <?=$categoria['nome']?>
 				
 				<?php
 				endforeach;

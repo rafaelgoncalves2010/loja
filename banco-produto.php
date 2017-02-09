@@ -4,7 +4,7 @@
 <?php 
 	function listarProdutos($conexao){
 	$produtos = array();
-	$busca = mysqli_query($conexao, "select*from produtos");
+	$busca = mysqli_query($conexao, "select p.*, c.nome  as categoria_nome from produtos as p join categorias as c on c.id=p.categoria_id");
 		while($produto = mysqli_fetch_assoc($busca)){
 			 array_push($produtos, $produto);
 		}
