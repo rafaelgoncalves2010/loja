@@ -1,6 +1,8 @@
 <?php include("cabecalho.php"); 
 	  include("banco-categoria.php");
 	  include("conecta.php");
+
+	  $categorias = listarCategorias($conexao);
 ?>
 
         <h1>Formulário de cadastro</h1>
@@ -8,18 +10,14 @@
             Nome: <input class="form-control" type="text" name="nome" /><br/>
             Preço: <input class="form-control" type="number" name="preco" /><br/>
 			Descrição: <input class="form-control" type="textarea" name="descricao"/><br/>
-			Categoria: 
-			
-			<?php 
-				$categorias = listarCategorias($conexao);
-				foreach ($categorias as $categoria):  ?>
-					<input type="radio" name="categoria_id" value="<?=$categoria['id']?>"> <?=$categoria['nome']?>
-				
-				<?php
-				endforeach;
+			Usado: <input type="checkbox" name="usado" value="true"> Sim
 
-			?>
-
+			<select name="categoria_id"> Categoria:
+			<?php foreach ($categorias as $categoria):  ?>
+				<option value="<?=$categoria['id']?>"> 
+					<?=$categoria['nome']?>
+				<?php endforeach; ?>
+			</select> 
 
 
 
