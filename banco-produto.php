@@ -12,6 +12,13 @@
 
 	}
 
+	function buscarProdutos($conexao, $id){
+		$query = "select * from produtos where id={$id}";
+		$resultado = mysqli_query($conexao, $query);
+		return mysqli_fetch_assoc($resultado);
+	}
+
+
 	function adicionaproduto($nome,$preco,$descricao,$categoria_id,$usado,$conexao){
 		$query = "insert into produtos (nome,preco,descricao,categoria_id,usado) values ('{$nome}',{$preco},'{$descricao}',{$categoria_id},'{$usado}')";
 		return mysqli_query($conexao, $query);
